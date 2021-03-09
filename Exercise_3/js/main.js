@@ -36,10 +36,16 @@ d3.json("data/ages.json").then((data)=> {
     })
     .attr("cy", 50)
     .attr("r", (d) => {
-        console.log(d);
         return d;
     })
-    .attr("fill", "blue");
+    .attr("fill", (circleRadius)=>{
+        var color = "blue";
+        if(circleRadius > 10){
+            color = "green";
+        }
+
+        return color;
+    });
 }).catch((error) => {
     console.log(error);
 });
