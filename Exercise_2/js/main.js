@@ -15,9 +15,9 @@ rectangles.enter()
 .append("rect")
 .attr("x", (d, i) => { 
     var count = data.length;
-    var svgHeight = svg.attr("height");
+    var svgWidth = svg.attr("width");
 
-    return i*(svgHeight / count);
+    return i*(svgWidth / count);
  })
 .attr("y", (d) => { 
     var svgHeight = svg.attr("height");
