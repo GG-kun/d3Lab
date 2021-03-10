@@ -14,7 +14,7 @@ d3.json("data/buildings.json").then((data)=> {
 		buildingsHeight.push(+d.height);
 	});
 
-    var rectangles = svg.selectAll("circle")
+    var rectangles = svg.selectAll("rect")
     .data(buildingsHeight);
 
     rectangles.enter()
