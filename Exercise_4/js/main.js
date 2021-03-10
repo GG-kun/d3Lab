@@ -12,7 +12,6 @@ d3.json("data/buildings.json").then((data)=> {
     var buildingsName = data.map((d)=>{
         return d.name;
     });
-    console.log(buildingsName)
     var x = d3.scaleBand()
 	.domain(buildingsName)
 	.range([0,svg.attr("width")])
@@ -28,6 +27,10 @@ d3.json("data/buildings.json").then((data)=> {
     var y = d3.scaleLinear()
 	.domain([0,maxBuildingHeight])
 	.range([0,svg.attr("height")]);
+
+    var colors = d3.scaleOrdinal()
+    .domain(buildingsName)
+    .range(d3.schemeSet3)
 
     var rectangles = svg.selectAll("rect")
     .data(data);
@@ -45,7 +48,9 @@ d3.json("data/buildings.json").then((data)=> {
     .attr("height", (d) => { 
         return y(d.height); 
     })
-    .attr("fill", "gray");
+    .attr("fill", (d) => { 
+        return colors(d.name); 
+    });
 }).catch((error) => {
     console.log(error);
 });
