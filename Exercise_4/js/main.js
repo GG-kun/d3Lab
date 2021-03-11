@@ -18,9 +18,6 @@ d3.json("data/buildings.json").then((data)=> {
 	.paddingInner(0.3)
 	.paddingOuter(0.3);
 
-    var buildingsHeight = data.map((d)=>{
-		return +d.height;
-	});
     var maxBuildingHeight = d3.max(data, (d) =>{
         return d.height;
     });
