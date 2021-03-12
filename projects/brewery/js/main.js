@@ -31,11 +31,11 @@ d3.json("data/revenues.json").then((data)=> {
 	.paddingInner(0.3)
 	.paddingOuter(0.3);
 
-    var maxBuildingHeight = d3.max(data, (d) =>{
+    var maxRevenueHeight = d3.max(data, (d) =>{
         return d.revenue;
     });
     var y = d3.scaleLinear()
-	.domain([0,maxBuildingHeight])
+	.domain([0,maxRevenueHeight])
 	.range([height,0]);
 
     var rectangles = g.selectAll("rect")
