@@ -112,10 +112,6 @@ d3.json("data/data.json").then(function(data){
 
 var t = d3.transition().duration(1000);
 
-function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-}
-
 function update(data, year) {
     yearLabel.text(year);
 

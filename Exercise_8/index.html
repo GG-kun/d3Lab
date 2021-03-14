@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>Exercise 8</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/d3-tip.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <!-- External JS Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#"><img id="logo" src="img/logo.png"></a>       -->
+        </div>
+    </nav>
+
+    <!-- Bootstrap grid setup -->
+    <div class="container">
+        <div class="row">
+            <div id="chart-area"></div>  
+        </div>
+    </div>
+
+    <button id="play-button" class="btn btn-primary">Play</button>
+    <button id="reset-button" class="btn btn-primary">Reset</button>
+    <select id="continent-select" class="form-control">
+        <option selected value="all">All</option>
+        <option value="europe">Europe</option>
+        <option value="asia">Asia</option>
+        <option value="americas">Americas</option>
+        <option value="africa">Africa</option>
+    </select>
+    <div id="slider-div">
+        <label>Year: <span id="year">1800 </span></label>    
+        <div id="date-slider"></div>    
+    </div>
+<!-- External JS libraries -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/d3-tip.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
