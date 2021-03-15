@@ -126,7 +126,7 @@ d3.json("data/data.json").then(function(data){
     update(formattedData[time], years[time]);
 })
 
-var t = d3.transition().duration(1000);
+var t = d3.transition().duration(100);
 
 // Listeners
 $("#play-button").on("click", ( ) => {
