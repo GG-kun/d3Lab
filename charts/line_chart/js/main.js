@@ -47,7 +47,9 @@ yAxis.append("text")
     .text("Population)");
 
 // Line path generator
-// TODO: Implement the line generator
+var line = d3.line()
+	.x((d) => { return x(d.year); })
+	.y((d) => { return y(d.value); });
 
 d3.json("data/example.json").then((data) => {
     // Data cleaning
@@ -57,14 +59,25 @@ d3.json("data/example.json").then((data) => {
     });
 
     // Set scale domains
-    // TODO: set domain of axes
+    x.domain(d3.extent(data, (d) => {
+        return d.year;
+    }));
+    var valueExtremes = d3.extent(data, (d) => {
+        return d.value;
+    })
+    y.domain([valueExtremes[0]-5000, valueExtremes[1]+5000]);
 
     // Generate axes once scales have been set
     xAxis.call(xAxisCall.scale(x))
     yAxis.call(yAxisCall.scale(y))
 
     // Add line to chart
-    // TODO: add line path
+    g.append("path")
+        .attr("class", "line")
+        .attr("fill", "none")
+        .attr("stroke", "grey")
+        .attr("stroke-with", "3px")
+        .attr("d", line(data));
 
     /******************************** Tooltip Code ********************************/
 
